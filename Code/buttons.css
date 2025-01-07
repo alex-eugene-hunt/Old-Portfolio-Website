@@ -1,0 +1,71 @@
+/* BUTTONS */
+.buttons {
+    position: relative;
+    align-items: center;
+}
+
+    .buttons a {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+        color: #fff;
+        padding: 12px 36px;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        border-radius: 40px;
+        overflow: hidden;
+        background: linear-gradient(90deg,#0044ff,#6d94ff);
+    }
+
+.button:nth-of-type(2) /*SECOND BUTTON*/ {
+    background: linear-gradient(90deg,#ff0000,#ff6a00);
+}
+
+buttonspan {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+/* HTML
+<section class="buttons">
+        <div class="buttons">
+            <a href="javascript:void(0)">Know More</a>
+            <a href="javascript:void(0)" class="button">Know More</a>
+            <script type="text/javascript">
+                const buttons = [...document.querySelectorAll('a')].filter((x) => x.innerText === "Know More");
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+
+                        var totalOffsetX = 0; // X and Y COORDINATES WITH SCROLL START
+                        var totalOffsetY = 0;
+                        var X = 0;
+                        var Y = 0;
+                        var currentElement = this;
+
+                        do {
+                            totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
+                            totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
+                        }
+                        while (currentElement = currentElement.offsetParent)
+
+                        X = e.pageX - totalOffsetX;
+                        Y = e.pageY - totalOffsetY; // X and Y COORDINATES WITH SCROLL END
+
+                        let ripples = document.createElement('buttonspan');
+                        ripples.style.left = X + 'px';
+                        ripples.style.top = Y + 'px';
+                        this.appendChild(ripples);
+
+                        setTimeout(() => {
+                            ripples.remove()
+                        }, 1000);
+                    })
+                })
+            </script>
+        </div>
+    </section>
+*/

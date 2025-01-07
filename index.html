@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Alex E. Hunt</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/Favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="code/jquery.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <section class="intro" id="int">
+        <header>
+            <a href="https://www.facebook.com/alex.eugene.hunt" target="_blank" id="FB"></a>
+            <a href="https://twitter.com/AlexEugeneHunt" target="_blank" id="TW"></a>
+            <a href="https://www.linkedin.com/in/alex-hunt-4782a4179/" target="_blank" id="LN"></a>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+        <!--INTRO BEGIN-->
+        <img src="img/Background.png" id="Background">
+        <img src="img/Mountain.png" id="Mountain">
+        <img src="img/CityBack.png" id="CityBack">
+        <img src="img/CityMid.png" id="CityMid">
+        <img src="img/CityFront.png" id="CityFront">
+        <img src="img/Name.png" id="Name">
+        <div id="navigation">
+            <ul>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Internships</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Social Media</a></li>
+            </ul>
+        </div>
+        <div id="navimg">
+            <img src="img/RoundEnds.png" id="RoundEnds">
+            <img src="img/MountainEnd.png" id="MountainEnd">
+            <img src="img/CityBackEnd.png" id="CityBackEnd">
+            <img src="img/CityMidEnd.png" id="CityMidEnd">
+            <img src="img/CityFrontEnd.png" id="CityFrontEnd">
+        </div>
+    </section>
+    <script type="text/javascript">
+        function toggle() {
+            var int = document.getElementById('int');
+            int.classList.toggle('active');
+        }
+    </script>
+    <script type="text/javascript">
+        let Background = document.getElementById("Background");
+        let Mountain = document.getElementById("Mountain");
+        let CityBack = document.getElementById("CityBack");
+        let CityMid = document.getElementById("CityMid");
+        let CityFront = document.getElementById("CityFront");
+        let Name = document.getElementById("Name");
+
+        let MountainEnd = document.getElementById("MountainEnd");
+        let CityBackEnd = document.getElementById("CityBackEnd");
+        let CityMidEnd = document.getElementById("CityMidEnd");
+        let CityFrontEnd = document.getElementById("CityFrontEnd");
+
+        let NavList = document.getElementById("navigation");
+
+        window.addEventListener('scroll', function () {
+            var value = window.scrollY;
+
+            Mountain.style.top = value * -3 + 930 + 'px';
+            CityBack.style.top = value * -2 + 960 + 'px';
+            CityMid.style.top = value * -1.25 + 975 + 'px';
+            Name.style.top = value * 1 + 'px';
+
+            MountainEnd.style.top = value * -3 + 617 + 'px';
+            CityBackEnd.style.top = value * -2 + 890 + 'px';
+            CityMidEnd.style.top = value * -1.25 + 975 + 'px';
+
+            NavList.style.top = value * -2 + 'px';
+        })
+    </script> <!--INTRO END-->
+    <section class="banner" id="ban">
+        <p id="date"></p>
+        <script type="text/javascript">
+            n = new Date();
+            y = n.getFullYear();
+            m = n.getMonth() + 1;
+            d = n.getDate();
+            w = n.getDay();
+
+            if (w == 0) {
+                w = "Sunday"
+            }
+            else if (w == 1) {
+                w = "Monday"
+            }
+            else if (w == 2) {
+                w = "Tuesday"
+            }
+            else if (w == 3) {
+                w = "Wenesday"
+            }
+            else if (w == 4) {
+                w = "Thursday"
+            }
+            else if (w == 5) {
+                w = "Friday"
+            }
+            else if (w == 6) {
+                w = "Saturday"
+            }
+
+            if (m == 1) {
+                m = "January"
+            }
+            else if (m == 2) {
+                m = "Febuary"
+            }
+            else if (m == 3) {
+                m = "March"
+            }
+            else if (m == 4) {
+                m = "April"
+            }
+            else if (m == 5) {
+                m = "May"
+            }
+            else if (m == 6) {
+                m = "June"
+            }
+            else if (m == 7) {
+                m = "July"
+            }
+            else if (m == 8) {
+                m = "August"
+            }
+            else if (m == 9) {
+                m = "September"
+            }
+            else if (m == 10) {
+                m = "October"
+            }
+            else if (m == 11) {
+                m = "November"
+            }
+            else if (m == 12) {
+                m = "December"
+            }
+            document.getElementById("date").innerHTML = w + ', ' + m + " " + d + ", " + y;
+        </script>
+        <p id="TP">
+            Today's Paper
+        </p>
+
+        <div id="data1"></div>
+        <div id="data2"></div>
+        <div id="data3"></div>
+        <div id="data4"></div>
+
+        <div id="stock1"></div>
+        <div id="stock2"></div>
+        <div id="stock3"></div>
+
+        <div id="change1"></div>
+        <div id="change2"></div>
+        <div id="change3"></div>
+
+        <script type="text/javascript">
+
+            $("#stock1").hide();
+            $("#stock2").hide();
+
+            function animate1() {
+                $("#stock3").delay(2000).fadeOut(1000, function () {
+                    $("#stock2").fadeIn(1000, function () {
+                        $("#stock2").delay(2000).fadeOut(1000, function () {
+                            $("#stock1").fadeIn(1000, function () {
+                                $("#stock1").delay(2000).fadeOut(1000, function () {
+                                    $("#stock3").fadeIn(1000, animate1);
+                                })
+                            })
+                        })
+                    })
+                })
+            }
+            animate1();
+        </script>
+
+        <script type="text/javascript">
+
+            $("#change1").hide();
+            $("#change2").hide();
+
+            function animate2() {
+                $("#change3").delay(2000).fadeOut(1000, function () {
+                    $("#change2").fadeIn(1000, function () {
+                        $("#change2").delay(2000).fadeOut(1000, function () {
+                            $("#change1").fadeIn(1000, function () {
+                                $("#change1").delay(2000).fadeOut(1000, function () {
+                                    $("#change3").fadeIn(1000, animate2);
+                                })
+                            })
+                        })
+                    })
+                })
+            }
+            animate2();
+        </script>
+
+        <div class="content">
+            <h2 id="h1">Meet Fido, a golden<br>retriver with three tails.</h2>
+            <p id="p1">
+                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate
+            </p>
+            <div id="i1"></div>
+            <p id="d1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <h2 id="h2">A new dog in town, that's<br>right, Clifford Jr. is here!</h2>
+            <p id="p2">
+                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod
+                tempor<br>incididunt ut labore et dolore magna<br>aliqua. Ut enim ad minim veniam,
+                quis<br>nostrud exercitation
+            </p>
+            <div id="i2"></div>
+            <p id="d2">
+                Lorem ipsum dolor sit amet.
+            </p>
+            <h2 id="h3">Cats vs. Dogs; Will we ever see an end?</h2>
+            <p id="p3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+            </p>
+            <h2 id="h4">New poll shows 100% of dogs<br>favorite color is grey</h2>
+            <p id="p4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+            </p>
+            <h2 id="h5">It's raining...<br>Just dogs this time!</h2>
+            <p id="p5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <h2 id="h6">We asked 100 dogs about their<br>favorite food, they said nothing</h2>
+            <h2 id="h7">Dogs in protest everywhere because<br>of neuter laws</h2>
+            <p id="p7">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+            </p>
+            <h2 id="h8">Dog's favorite thing to do? Nothing</h2>
+            <h2 id="o">Opinion</h2>
+            <h2 id="a1">Alex Hunt</h2>
+            <h2 id="a2">Alex Hunt</h2>
+        </div>
+        <div class="guide">
+            <a href="#">Education</a>
+            <a href="#">Interships</a>
+            <a href="#">Projects</a>
+            <a href="#">Social Media</a>
+            <a href="#">About me</a>
+            <a href="#">Family</a>
+            <a href="#">Friends</a>
+            <a href="#">Opinions</a>
+            <a href="#">Journal</a>
+            <a href="#">Pets</a>
+        </div>
+    </section>
+</body>
+</html>
